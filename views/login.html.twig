@@ -1,0 +1,21 @@
+{%extends 'base.html.twig'%}
+{%block body%}
+	<div class="container">
+		<div class="four">
+		<h1>Login</h1>
+			<p>Please sign in,</p>
+				
+    <form action="/login.html" method="post">
+      <div>
+			<p>Username<input type="text" name="username" /></p>
+        </div>
+      <div>
+			<p>Password<input type="password" name="password" /></p>
+      </div>
+      <div>
+			<p><input type="submit" value="Submit" /></p>
+        
+      </div>
+    </form>			</div>
+</div>
+{%endblock%}
