@@ -805,7 +805,7 @@ a.go:hover{
 	font-size:1.7em;
 	margin-top: 0px;	
 }
-.contact-left input[type="text"],.contact-left textarea{
+.contact-left input[type="text"],.contact-left textarea,.contact-left input[type="email"]{
 	padding:14px;
 	display:block;
 	width:98%;
@@ -2138,4 +2138,52 @@ a.order {
 #owl-demo .item {
   width: 78% !important;
 }
+}
+
+
+.btn{
+outline: none;
+cursor: pointer;
+border: none;
+transition: 0.5s all;
+-webkit-transition: 0.5s all;
+-o-transition: 0.5s all;
+-moz-transition: 0.5s all;
+-ms-transition: 0.5s all;
+text-decoration: none;
+color: #fff;
+font-size: 1.1em;
+padding: 0.5em 0.8em;
+width: 5%;
+background: #615c85;
+margin: -0.2em 1em 0;
+line-height: 131%;
+border-radius: 0;
+}
+.btn:hover{
+    background: #8fbf00;
+}
+
+.btnconnexion{
+outline: none;
+cursor: pointer;
+border: none;
+transition: 0.5s all;
+-webkit-transition: 0.5s all;
+-o-transition: 0.5s all;
+-moz-transition: 0.5s all;
+-ms-transition: 0.5s all;
+text-decoration: none;
+color: #fff;
+font-size: 1.1em;
+padding: 0.5em 0.8em;
+width: 30%;
+background: #615c85;
+margin: -0.2em 1em 0;
+line-height: 131%;
+border-radius: 0;
+}
+.btnconnexion:hover{
+    background: #8fbf00;
+    text-decoration: none;
 }

@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+
 	<div class="container">
 		<div class="contact">
 	<h2>CONTACT</h2>
@@ -15,31 +16,26 @@
 				   		<p>Follow on: <a href="#">Facebook</a>, <a href="#">Twitter</a></p>
 				    </div>
 				<div class=" col-md-9 contact-left">
-				
-                 {%  if message is defined %}
-				  <div id="dbmessage">{{ message }}</div>
-				    {% else %}
-    				 <div id="dbmessage"></div>
-                
-                    {% endif %}  
-					    <form  action="contact.html" method='POST'>
+				  
+					    <form action="/contact.html" method="POST">
 					    	<div>
-						    	<span>Nom</span>
-						    	<input name="name" type="text" class="textbox">
+						    	<span>Name</span>
+						    	<input name="name" type="text" class="textbox" maxlength="32" required>
 						    </div>
 						    <div>
 						    	<span>E-Mail</span>
-						    	<input name="email" type="text" class="textbox">
+						    	<input name="email" class="textbox" type="email" maxlength="32" required>
 						    </div>
 						    <div>
-						    	<span>Sujet</span>
-						    	<textarea name="subject"> </textarea>
+						    	<span>Subject</span>
+						    	<textarea name="subject"  maxlength="200" required> </textarea>
 						    </div>
 						   <div>
 						   		<input type="submit" value="Submit">
 								
 						  </div>
 					    </form>
+					    <div id="dbmessage"></div>
 				  </div>
 
 					
@@ -53,4 +49,4 @@
 				</div>
 		</div>
 </div>
-{% endblock %}	
+{% endblock %}

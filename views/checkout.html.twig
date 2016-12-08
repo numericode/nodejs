@@ -150,6 +150,7 @@ $(document).ready(function(){
 		     console.log(url2);
 			if (quantite==0){
 				 $.ajax(url2).done(function(data){
+					 var datas = JSON.parse(data);
 						$('.cart-header{{ loop.index }}').fadeOut('slow', function(c){
 							//alert(data);
 							//et on l'efface completement de la page 	
@@ -157,8 +158,9 @@ $(document).ready(function(){
 							$('#ptipri{{ loop.index }}').empty();
 							$('#lab{{ loop.index }}').empty();
 							$('#total').empty();
-							console.log('data'+data);
-							$('#total').prepend(data);							
+							$('#total').prepend(datas["total"] + ' € ');							
+							$('#simpleCart_quantity').empty();
+							$('#simpleCart_quantity').prepend(datas["nbitem"]);									
 						});
 				})
 			}
@@ -167,13 +169,16 @@ $(document).ready(function(){
 				//on execute l'ajax qui envoie la route pour faire l'action de modifier dans la bd
 				console.log(url);
 			     $.ajax(url).done(function(data){
-				     var tot = data;
+				     var datas = JSON.parse(data);
+				     var tot = datas["total"];
 				     //console.log('Attempting to modify caddy : '+url + ' with new total : ' + data);
 			     		//j'enleve les elements dans la balise id="#ptipri(n)"	
 	 		   			 $('#total').empty();
 							//a l'interieur je rajoute le nouvel element 
 						 $('#total').prepend(tot+' € ');				     	
-				     	
+						$('#simpleCart_quantity').empty();
+						$('#simpleCart_quantity').prepend(datas["nbitem"]);									
+								     	
 						  //j'enleve les elements dans la balise id="#resultat(n)"	
 			   			 $('#result{{ loop.index }}').empty();
 							//a l'interieur je rajoute le nouvel element 

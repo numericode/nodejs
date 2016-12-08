@@ -173,8 +173,9 @@ $(document).ready(function(){
 	$("#url_add").on('click', function(event){
 		event.preventDefault();
 		$.ajax($('#url_add').attr('href')).done(function(data){
+			var datas = JSON.parse(data);
 			$('#simpleCart_quantity').empty();
-			$('#simpleCart_quantity').prepend(data);									
+			$('#simpleCart_quantity').prepend(datas["nbitem"]);									
 		});
 	});
 });

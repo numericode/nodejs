@@ -26,12 +26,12 @@
     					<div>
     						<label style="font-weight: normal;"><span>Password
     								: </span></label> <input name="password" type="password" class="textbox"
-    							value="{{ profil.password }}" />
+    							value="{{ profil.password }}" maxlength="64" required />
     					</div>
     					<div>
     						<span>Username&nbsp;&nbsp;&nbsp;<em>*need to log out
     								to apply modification</em></span> <input name="username" type="text"
-    							class="textbox" value="{{ profil.username }}" />
+    							class="textbox" value="{{ profil.username }}" maxlength="25" required />
     					</div>
     					<div style="margin: 2em 0 1em 0;">
     						<h3>Personal informations</h3>
@@ -46,15 +46,15 @@
     					</div>
     					<div>
     						<span>Firstname</span> <input name="prenom" type="text"
-    							class="textbox" value="{{ profil.firstname }}" />
+    							class="textbox" value="{{ profil.firstname }}" maxlength="32" required />
     					</div>
     					<div>
     						<span>Lastname</span> <input name="nom" type="text"
-    							class="textbox" value="{{ profil.lastname }}" />
+    							class="textbox" value="{{ profil.lastname }}" maxlength="64" required />
     					</div>
     					<div>
     						<span>Tel: +33</span> <input name="telephone" type="text"
-    							class="textbox" value="{{ profil.phone }}" />
+    							class="textbox" value="{{ profil.phone }}" maxlength="9" required />
     					</div>
     					
     					<div style="margin: 2em 0 1em 0;">
@@ -98,19 +98,19 @@
                 								<div class="panel-body">						    
                     								<div>			
                     									<span>Number</span> <input name="numero{{ addType }}" type="text"
-                    										class="textbox" value="{{ adresse.num }}" />
+                    										class="textbox" maxlength="16" value="{{ adresse.num }}" {% if addType == "domicile" %}required{% endif %} />
                     								</div>
                     								<div>
                     									<span>Street</span> <input name="rue{{ addType }}" type="text"
-                    										class="textbox" value="{{ adresse.street }}" />
+                    										class="textbox" maxlength="128" value="{{ adresse.street }}" {% if addType == "domicile" %}required{% endif %} />
                     								</div>
                     								<div>
                     									<span>Postal Code</span> <input name="CP{{ addType }}" type="text"
-                    										class="textbox" value="{{ adresse.pc }}" />
+                    										class="textbox" maxlength="5" value="{{ adresse.pc }}" {% if addType == "domicile" %}required{% endif %} />
                     								</div>
                     								<div>
                     									<span>Town</span> <input name="ville{{ addType }}" type="text"
-                    										class="textbox" value="{{ adresse.city }}" />
+                    										class="textbox" maxlength="32" value="{{ adresse.city }}" {% if addType == "domicile" %}required{% endif %} />
                     								</div>  									
                 								</div>
             								{% endif %}
@@ -119,19 +119,19 @@
                 								<div class="panel-body">						    
                         							<div>			
                         								<span>Number</span> <input name="numero{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="16" value="" />
                         							</div>
                         							<div>
                         								<span>Street</span> <input name="rue{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="128" value="" />
                         							</div>
                         							<div>
                         								<span>Postal Code</span> <input name="CP{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="5" value="" />
                         							</div>
                         							<div>
                         								<span>Town</span> <input name="ville{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="32" value="" />
                         							</div>  									
                     							</div>
             							{% endif %}
@@ -139,19 +139,19 @@
                 								<div class="panel-body">						    
                         							<div>			
                         								<span>Number</span> <input name="numero{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="16" value="" />
                         							</div>
                         							<div>
                         								<span>Street</span> <input name="rue{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="128" value="" />
                         							</div>
                         							<div>
                         								<span>Postal Code</span> <input name="CP{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="5" value="" />
                         							</div>
                         							<div>
                         								<span>Town</span> <input name="ville{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="32" value="" />
                         							</div>  									
                     							</div>
             							{% endif %}
@@ -159,19 +159,19 @@
                 									<div class="panel-body">						    
                         							<div>			
                         								<span>Number</span> <input name="numero{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="16" value="" />
                         							</div>
                         							<div>
                         								<span>Street</span> <input name="rue{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="128" value="" />
                         							</div>
                         							<div>
                         								<span>Postal Code</span> <input name="CP{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="5" value="" />
                         							</div>
                         							<div>
                         								<span>Town</span> <input name="ville{{ addType }}" type="text"
-                        									class="textbox" value="" />
+                        									class="textbox" maxlength="32" value="" />
                         							</div>  									
                     							</div>
             							{% endif %}

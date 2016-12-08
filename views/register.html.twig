@@ -14,39 +14,39 @@
     					</div>    					
     					<div>
     						<span>Email&nbsp;&nbsp;&nbsp;</span>
-    						<input name="email" type="text" class="textbox"  />
+    						<input type="email" name="email" class="textbox" maxlength="60" required />
     					</div>
     					<div>
     						<label style="font-weight: normal;"><span>Password : </span></label>
-    						<input name="password" type="password" class="textbox" style="margin-left:6% ;" />
+    						<input id="password" name="password" type="password" class="textbox contact-left"  placeholder="Password" maxlength="64" style="margin-left:6%" />
     					</div>
     					<div>
     						<label style="font-weight: normal;"><span>Repeat password : </span></label>
-    						<input name="reppassword" type="password" class="textbox"  />
+    						<input id="confirm_password" name="reppassword" type="password" class="textbox" maxlength="64" placeholder="Confirm Password" />
     					</div>
     					<div>
     						<span>Username</span>
-    						<input name="username" type="text" class="textbox"  />
+    						<input name="username" type="text" class="textbox" maxlength="25" required />
     					</div>		
     					<div style="margin: 2em 0 1em 0;">
     						<h3>Personal informations</h3>
     					</div>	
     					<div>
     						<span>Civility</span>
-    						<input name="civilite" type="radio" value="Monsieur" > Mister&nbsp;&nbsp;&nbsp;
-    						<input name="civilite" type="radio" value="Madame" > Miss
+    						<input name="civilite" type="radio" value="Monsieur" checked /> Mister&nbsp;&nbsp;&nbsp;
+    						<input name="civilite" type="radio" value="Madame" /> Miss
     					</div>
     					<div>
     						<span>Firstname</span>
-    						<input name="prenom" type="text" class="textbox" />
+    						<input name="prenom" type="text" class="textbox" maxlength="32" required />
     					</div>
     					<div>
     						<span>Lastname</span>
-    						<input name="nom" type="text" class="textbox" />
+    						<input name="nom" type="text" class="textbox" maxlength="64" required />
     					</div>
     					<div>
     						<span>Tel: +33</span>
-    						<input name="telephone" type="text" class="textbox"  />
+    						<input name="telephone" type="text" maxlength="9"  class="textbox" required />
     					</div>
     					<div style="margin: 2em 0 1em 0;">
     						<h3>Adress information</h3>
@@ -68,16 +68,16 @@
 								class="panel-collapse collapse in">								
 										<div class="panel-body">								
 											<div>
-												<span>Number</span> <input name="numero{{ addType }}" type="text" class="textbox" value="" />
+												<span>Number</span> <input name="numero{{ addType }}" type="text" class="textbox" maxlength="16" value="" {% if addType == "domicile" %}required{% endif %} />
 											</div>
 											<div>
-												<span>Street</span> <input name="rue{{ addType }}" type="text"	class="textbox" value="" />
+												<span>Street</span> <input name="rue{{ addType }}" type="text" class="textbox" maxlength="128" value="" {% if addType == "domicile" %}required{% endif %} />
 											</div>
 											<div>
-												<span>Postal Code</span> <input name="CP{{ addType }}" type="text"	class="textbox" value="" />
+												<span>Postal Code</span> <input name="CP{{ addType }}" type="text" class="textbox" maxlength="5" value="" {% if addType == "domicile" %}required{% endif %} />
 											</div>
 											<div>
-												<span>Town</span> <input name="ville{{ addType }}" type="text"	class="textbox" value="" />
+												<span>Town</span> <input name="ville{{ addType }}" type="text" class="textbox" maxlength="32" value="" {% if addType == "domicile" %}required{% endif %} />
 											</div>
 											<div style="height: 1em;">
 
@@ -111,5 +111,19 @@ $(document).ready(function(){
 			});
 
 {% endfor %}
+//confirmation du password
+var password = document.getElementById("password")
+, confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+if(password.value != confirm_password.value) {
+  confirm_password.setCustomValidity("Passwords Don't Match");
+} else {
+  confirm_password.setCustomValidity('');
+}
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
 </script>
 {% endblock %}
