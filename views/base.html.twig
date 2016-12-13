@@ -137,6 +137,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									items)
 								</div>
 								<img src="/images/cart.png" alt="" />
+								<span id="total">
+								{% if total is defined %}({{ total }} €){% else %}(0 €){% endif %} 
+								</span>
 							</h3>
 						</a>
 						<p>

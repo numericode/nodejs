@@ -8,6 +8,7 @@ var dateformat = require('dateformat');
 var routing = require('routing');
 var caddierouting = require('caddierouting');
 var cfg = require('config');
+var mail = require('mailrouting');
 //on appel le module qui s'occupe des routes admin
 var admin = require('admin');
 var df = require('dateformat');
@@ -49,6 +50,7 @@ app.use("/admin",admin);
 app.use("/",routing);
 
 app.use("/",caddierouting);
+app.use("/",mail);
 
 
 //si aucune route n'a été trouvée dans les différents router ci de-dessus
